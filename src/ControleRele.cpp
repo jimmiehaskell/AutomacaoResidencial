@@ -15,16 +15,16 @@ void ControleRele::Update() {
 
     if((releState == HIGH) && (currentMillis - previousMillis >= OnTime))
     {
-        releState = LOW;  // Desliga o rele
+        releState = LOW;  // Aciona o rele
         previousMillis = currentMillis;  // Guarda o tempo
-        digitalWrite(relePin, releState);  // Faz o Update do rele
-        Serial.println("Relé ligado!");
+        digitalWrite(relePin, releState);  // Faz o Update do relé
+//        Serial.println("Relé ligado!");
     }
     else if ((releState == LOW) && (currentMillis - previousMillis >= OffTime))
     {
-        releState = HIGH;  // Liga o rele
+        releState = HIGH;  // Desliga o rele
         previousMillis = currentMillis;   //Guarda o tempo
         digitalWrite(relePin, releState);      // Faz o Update do rele
-        Serial.println("Relé desligado!");
+//        Serial.println("Relé desligado!");
     }
 }

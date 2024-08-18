@@ -20,13 +20,13 @@ class ControleRele
     long OnTime;     // milissegundos do tempo ligado
     long OffTime;    // milissegundos do tempo desligado
     // Essas mantém o estado atual
-    int releState;                     // ledState usada para guardar o estado do relé
+    int releState;                     // releState usada para guardar o estado do relé
     unsigned long previousMillis;      // vai guardar o último acionamento do relé
 
 public:
     ControleRele(int pin, long on, long off) {
         relePin = pin;
-        pinMode(relePin, OUTPUT);
+        pinMode(relePin, OUTPUT); // Define o pino do rele como saída
 
         OnTime = on;
         OffTime = off;
