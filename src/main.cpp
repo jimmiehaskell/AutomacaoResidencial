@@ -8,15 +8,12 @@
 // main.cpp
 //
 
+#include "ConexaoWiFi.hpp"
 #include "config.hpp"
-#include "ControleRele.hpp"
-#include "SensorUmidadeSolo.hpp"
-
-ControleRele rele1(18, 500, 1250);
 
 void setup() {
-    Serial.begin(9600);
+    ConexaoWiFi conexaoWiFi(BAUD_RATE_DEFAULT);
+    Serial.begin(BAUD_RATE_DEFAULT);
 }
 void loop() {
-    rele1.Update();
 }

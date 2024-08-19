@@ -12,4 +12,6 @@
 
 #include <Arduino.h>
 
+const int BAUD_RATE_DEFAULT = 9600;
+
 #endif //CONFIG_HPP

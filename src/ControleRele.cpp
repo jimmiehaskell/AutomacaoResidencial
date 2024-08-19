@@ -13,14 +13,14 @@ void ControleRele::Update() {
     // Faz a checagem para saber se já é o momento de alterar o estado do LED
     unsigned long currentMillis = millis();
 
-    if((releState == HIGH) && (currentMillis - previousMillis >= OnTime))
+    if((releState == HIGH) && (currentMillis - previousMillis >= OffTime))
     {
         releState = LOW;  // Aciona o rele
         previousMillis = currentMillis;  // Guarda o tempo
         digitalWrite(relePin, releState);  // Faz o Update do relé
 //        Serial.println("Relé ligado!");
     }
-    else if ((releState == LOW) && (currentMillis - previousMillis >= OffTime))
+    else if ((releState == LOW) && (currentMillis - previousMillis >= OnTime))
     {
         releState = HIGH;  // Desliga o rele
         previousMillis = currentMillis;   //Guarda o tempo
